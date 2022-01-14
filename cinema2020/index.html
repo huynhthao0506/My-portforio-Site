@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>オンラインシネマ</title>
+	
+  <!-- load CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+  <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+	<!-- Google web font -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">                                            <!-- https://getbootstrap.com/ -->
+  <link rel="stylesheet" href="css/fontawesome-all.min.css">                                      <!-- Font awesome -->
+  <link rel="stylesheet" href="css/tooplate-style.css">                                           
+
+  <script>
+    var renderPage = true;
+
+    if (navigator.userAgent.indexOf('MSIE') !== -1
+      || navigator.appVersion.indexOf('Trident/') > 0) {
+      /* Microsoft Internet Explorer detected in. */
+      alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
+      renderPage = false;
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <!-- Loader -->
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+  <div class="tm-main">
+
+    <div class="tm-welcome-section">
+      <div class="container tm-navbar-container">
+        <div class="row">
+          <div class="col-xl-12">
+            <nav class="navbar navbar-expand-sm">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a href="index.html" class="nav-link tm-nav-link table-active active">ホーム</a>
+                </li>
+                <li class="nav-item">
+                  <a href="about.html" class="nav-link tm-nav-link tm-text-blue-dark">オンラインシネマ</a>
+                </li>
+                <li class="nav-item">
+                  <a href="contact.html" class="nav-link tm-nav-link tm-text-blue-dark">連絡</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="container text-center tm-welcome-container">
+        <div class="tm-welcome">
+          <i class="fas tm-fa-big fa-film tm-fa-mb-big"></i>
+          <h1 class="text-uppercase mb-3 tm-site-name">オンラインシネマ</h1>
+          <p class="tm-site-description">どこでも映画館になる。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <div class="tm-search-form-container">
+        <form action="index.html" method="GET" class="form-inline tm-search-form">
+          <div class="text-uppercase tm-new-release">SEARCH</div>
+          <div class="form-group tm-search-box">
+            <input type="text" name="keyword" class="form-control tm-search-input" placeholder="好きなワードを入力してください。">
+            <input type="submit" value="検索" class="form-control tm-search-submit">
+          </div>
+          <div class="form-group tm-advanced-box">
+            <a href="#" class="tm-text-white">ジャンル</a>
+          </div>
+        </form>
+      </div>
+
+      <div class="row tm-albums-container grid">
+        <div class="col-sm-6 col-12 col-md-6 col-lg-3 col-xl-3 tm-album-col">
+          <figure class="effect-sadie">
+            <img src="img/insertion-260x390-01.jpg" alt="Image" class="img-fluid">
+            <figcaption>
+              <p>田舎へ引っ越してきた草壁一家のサツキ・メイ姉妹と、子どもの時にしか会えないと言われる不思議な生き物・トトロとの交流です。</p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-6 col-12 col-md-6 col-lg-3 col-xl-3 tm-album-col">
+          <figure class="effect-sadie">
+            <img src="img/insertion-260x390-02.jpg" alt="Image" class="img-fluid">
+            <figcaption>
+              <p>千尋という名の10歳の少女が、引っ越し先へ向かう途中に立ち入ったトンネルから、神々の世界へ迷い込んでしまう物語。千尋の両親は掟を破ったことで魔女の湯婆婆によって豚に変えられてしまう。千尋は、湯婆婆の経営する銭湯で働きながら、両親とともに人間の世界へ帰るために奮闘する。</p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-6 col-12 col-md-6 col-lg-3 col-xl-3 tm-album-col">
+          <figure class="effect-sadie">
+            <img src="img/insertion-260x390-03.jpg" alt="Image" class="img-fluid">
+            <figcaption>
+              <p>第72回カンヌ国際映画祭では韓国映画初となるパルム・ドールの受賞を果たした[6]。第92回アカデミー賞では作品賞を含む6部門にノミネートされ、作品賞、監督賞、脚本賞、国際長編映画賞の最多4部門を受賞した。非英語作品の作品賞受賞は史上初めてのことである。また、アカデミー作品賞とカンヌの最高賞を同時に受賞した作品は『マーティ』（1955年）以来、65年ぶりとなった。</p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-6 col-12 col-md-6 col-lg-3 col-xl-3 tm-album-col">
+          <figure class="effect-sadie">
+            <img src="img/insertion-260x390-04.jpg" alt="Image" class="img-fluid">
+            <figcaption>
+              <p>かつて指導者であった母から厳しい指導を受け、正確無比な演奏で数々のピアノコンクールで優勝し、「ヒューマンメトロノーム」とも揶揄された神童有馬公生は、母の死をきっかけに、ピアノの音が聞こえなくなり、コンクールからも遠ざかってしまう…</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="tm-tag-line">
+          <h2 class="tm-tag-line-title">山の中でも好きな映画が見えます。</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col-xl-12">
+          <div class="media-boxes">
+            <div class="media">
+              <img src="img/insertion-140x140-01.jpg" alt="Image" class="mr-3">
+              <div class="media-body tm-bg-gray">
+                <div class="tm-description-box">
+                  <h5 class="tm-text-blue">万引き家族</h5>
+                  <p class="mb-0">東京の下町では家主の初枝の元に、息子夫婦と孫、そして嫁の妹が身を寄せ合い、貧しい中で暮らしていました<a href="＃">…</a></p>
+                </div>
+                <div class="tm-buy-box">
+                  <a href="#" class="tm-bg-blue tm-text-white tm-buy">購入</a>
+                  <span class="tm-text-blue tm-price-tag">￥2,538</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="media">
+              <img src="img/insertion-140x140-02.jpg" alt="Image" class="mr-3">
+              <div class="media-body tm-bg-pink-light">
+                <div class="tm-description-box">
+                  <h5 class="tm-text-pink">鎌倉ものがたり</h5>
+                  <p class="mb-0">鎌倉に住むミステリー作家の一色正和。この町には、人間と魔物や妖怪が共存していた<a href="＃">…</a></p>
+                </div>
+                <div class="tm-buy-box">
+                  <a href="#" class="tm-bg-pink tm-text-white tm-buy">購入</a>
+                  <span class="tm-text-pink tm-price-tag">￥2,500</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="media">
+              <img src="img/insertion-140x140-03.jpg" alt="Image" class="mr-3">
+              <div class="media-body tm-bg-gray">
+                <div class="tm-description-box">
+                  <h5 class="tm-text-blue">仄暗い水の底から</h5>
+                  <p class="mb-0">離婚調停中であり、娘・郁子の親権を夫・邦夫と争っている淑美は生活を立て直そうと、郁子と一緒に新しいマンションに引っ越す<a href="＃">…</a></p>
+                </div>
+                <div class="tm-buy-box">
+                  <a href="#" class="tm-bg-blue tm-text-white tm-buy">購入</a>
+                  <span class="tm-text-blue tm-price-tag">￥2,000</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="media">
+              <img src="img/insertion-140x140-04.jpg" alt="Image" class="mr-3">
+              <div class="media-body tm-bg-pink-light">
+                <div class="tm-description-box">
+                  <h5 class="tm-text-pink">言の葉の庭</h5>
+                  <p class="mb-0">靴職人を目指す高校生のタカオ（秋月孝雄）は、雨の日の1限は授業をサボって、庭園で靴のデザインを考えていた<a href="＃">…</a></p>
+                </div>
+                <div class="tm-buy-box">
+                  <a href="#" class="tm-bg-pink tm-text-white tm-buy">購入</a>
+                  <span class="tm-text-pink tm-price-tag">￥2,500</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="media">
+              <img src="img/insertion-140x140-05.jpg" alt="Image" class="mr-3">
+              <div class="media-body tm-bg-gray">
+                <div class="tm-description-box">
+                  <h5 class="tm-text-blue">プーと大人になった僕 (字幕版)</h5>
+                  <p class="mb-0">イギリスの田舎に住む少年クリストファー・ロビンは、100エーカーの森でくまのプーさんとその仲間たちと楽しい日々を過ごしていたが<a href="＃">…</a></p>
+                </div>
+                <div class="tm-buy-box">
+                  <a href="#" class="tm-bg-blue tm-text-white tm-buy">購入</a>
+                  <span class="tm-text-blue tm-price-tag">￥2,500</span>
+                </div>
+              </div>
+            </div>
+          </div> <!-- media-boxes -->
+        </div>
+      </div>
+
+      <div class="row tm-mb-big tm-subscribe-row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 tm-bg-gray tm-subscribe-form">
+          <h3 class="tm-text-pink tm-mb-30">お知らせをゲットしましょう。</h3>
+          <p class="tm-mb-30">新作の情報をすぐもらえるようにEメールで申込いただければ、通知できるようになります。ぜひ申し込んでください。</p>
+          <form action="index.html" method="POST">
+            <div class="form-group mb-0">
+              <input type="text" class="form-control tm-subscribe-input" placeholder="Eメール">
+              <input type="submit" value="送信" class="tm-bg-pink tm-text-white d-block ml-auto tm-subscribe-btn">
+            </div>
+          </form>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 img-fluid pl-0 tm-subscribe-img"></div>
+      </div>
+
+      <div class="row tm-mb-medium">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 mb-4">
+          <h4 class="mb-4 tm-font-300">人気映画</h4>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">泣きたい私は猫をかぶる</a>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">記憶にございません!</a>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">性の劇薬</a>
+          <a href="#" class="tm-text-blue-dark d-block">アイネクライネ ナハトムジーク</a>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 mb-4">
+          <h4 class="mb-4 tm-font-300">よくある質問</h4>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">オンラインシネマとは？</a>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">アカウントを作るには</a>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">お支払い方法</a>
+          <a href="#" class="tm-text-blue-dark d-block">対応デバイス</a>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+          <h4 class="mb-4 tm-font-300">ヘルプセンター</h4>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">利用規約</a>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">法的事項</a>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">お問い合わせ</a>
+          <a href="#" class="tm-text-blue-dark d-block">プライバシー</a>
+        </div>
+      </div>
+      <footer class="row">
+        <div class="col-xl-12">
+          <p class="text-center p-4">Copyright &copy; <span class="tm-current-year">2020</span> オンラインシネマ</p>
+        </div>
+      </footer>
+    </div> <!-- .container -->
+
+  </div> <!-- .main -->
+
+  <!-- load JS -->
+  <script src="js/jquery-3.2.1.slim.min.js"></script> <!-- https://jquery.com/ -->
+  <script>
+
+    /* DOM is ready
+    ------------------------------------------------*/
+    $(function () {
+
+      if (renderPage) {
+        $('body').addClass('loaded');
+      }
+
+      $('.tm-current-year').text(new Date().getFullYear());  // Update year in copyright
+    });
+
+  </script>
+</body>
+</html>

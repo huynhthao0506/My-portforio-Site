@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>練習</title>
+<!--アイコンの設定（Android対応）-->
+<link href="icon.png" rel="apple-touch-icon">
+<link href="calc2.css" rel="stylesheet" type="text/css">
+
+<!--iPhone用フルスクリーン表示-->
+<meta name="apple-mobile-web-app-capable" content="yes">
+	
+<!--Android用フルスクリーン表示-->
+<script>
+	setTimeout(function(){
+		window.scrollBy(0,1);
+		//画面を、横方向は0、縦方向は1行スクロールさせる
+	},100);//100はミリ秒＝0.1秒のこと
+</script>
+</head>
+
+<body>
+<form name="myForm">
+	<table>
+		<tr class="row1"><td colspan="4"><img src="images/btn1-1.png"></td></tr>
+		<tr>
+			<td colspan="3" class="keisan">
+				<input type="text" size="12" name="myLine" value="0">
+			</td>
+			<td><a class="kigou" href="#" onClick="myC()"><img src="images/btn2-2.png"></a></td>
+		</tr>
+		<tr>
+			<td><a href="#" onClick="myValue(7)"><img src="images/btn3-1.png"></a></td>
+			<td><a href="#" onClick="myValue(8)"><img src="images/btn3-2.png"></a></td>
+			<td><a href="#" onClick="myValue(9)"><img src="images/btn3-3.png"></a></td>
+			<td><a class="kigou" href="#" onClick="myCalculate('/')"><img src="images/btn3-4.png"></a></td>
+		</tr>
+		<tr>
+			<td><a href="#" onClick="myValue(4)"><img src="images/btn4-1.png"></a></td>
+			<td><a href="#" onClick="myValue(5)"><img src="images/btn4-2.png"></a></td>
+			<td><a href="#" onClick="myValue(6)"><img src="images/btn4-3.png"></a></td>
+			<td><a class="kigou" href="#" onClick="myCalculate('*')"><img src="images/btn4-4.png"></a></td>
+		</tr>
+		<tr>
+			<td><a href="#" onClick="myValue(1)"><img src="images/btn5-1.png"></a></td>
+			<td><a href="#" onClick="myValue(2)"><img src="images/btn5-2.png"></a></td>
+			<td><a href="#" onClick="myValue(3)"><img src="images/btn5-3.png"></a></td>
+			<td><a class="kigou" href="#" onClick="myCalculate('-')"><img src="images/btn5-4.png"></a></td>
+		</tr>
+		<tr>
+			<td><a href="#" onClick="myValue(0)"><img src="images/btn6-1.png"></a></td>
+			<td><a href="#" onClick="myValue('.')"><img src="images/btn6-2.png"></a></td>
+			<td><a href="#" onClick="myCalculate('+')"><img src="images/btn6-3.png"></a></td>
+			<td><a class="kigou" href="#" onClick="myCalculate('=')"><img src="images/btn6-4.png"></a></td>
+		</tr>
+		<tr class="row7"><td colspan="4"><img src="images/btn7-1.png"></td></tr>
+	</table>
+</form>
+<script>
+//変数を初期化する
+	var myTotal = 0;
+	//現在の計算結果を覚える変数を初期化
+	var myInput = '';
+	//今入力した値を覚える変数を初期化
+	var myCalc = '+';
+	//今クリックした演算子を覚える変数を初期化
+	var myFlg = 1;
+	//今入力したのが数字なら「0」を、演算子なら「1」を覚える変数を初期化
+	
+	//数字キーまたは小数点キーを押したとき
+	function myValue(myData){
+		myFlg = 0;
+		//今入力したのは数値だと覚えておく
+		myInput += myData;
+		//合計値に今入力した値を足し算して覚えなおす
+		document.myForm.myLine.value = myInput;
+		//今入力した値を画面に表示
+	}
+	
+	//演算子キーを入力したとき
+	function myCalculate(myData){
+		if(myFlg == 0){
+			//1回前に入力したのが数字なら
+			myFlg = 1;
+			//今入力したのは演算子だと覚えておく
+			myWork = myTotal + myCalc + myInput;
+			//一連の計算式を作る
+			myTotal = eval(myWork);
+			//作った計算式を実行して計算させる
+			myInput = '';
+			//今入力した値を覚える変数を初期化する
+			document.myForm.myLine.value = myTotal;
+			//計算結果を画面に表示させる
+		}
+		
+		if(myData == '='){
+			//今入力したのが「＝」のとき
+			myTotal = 0;
+			//合計値を覚える変数を初期化する
+			myCalc = '+';
+			//今入力した演算子を覚える変数を初期化
+		}else{
+			//そうじゃなかったら（今入力したのが＝以外のとき
+			myCalc = myData;
+			//今入力した演算子を変数に覚えておく
+		}
+	}
+	
+	//クリアボタンを押したとき
+	function myC(){
+		myTotal = 0;
+		//合計値を覚える変数を初期化
+		myCalc = '+';
+		//今入力した演算子を覚える変数を初期化
+		myInput = '';
+		//今入力した数値を覚える変数を初期化
+		document.myForm.myLine.value = 0;
+		//画面に「0」を表示させる
+	}
+</script>
+</body>
+</html>
+
+
+
+
+

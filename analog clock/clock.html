@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>アナログ時計</title>
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset-context/cssreset-context-min.css">
+    <!---アイコンの設定　（Android対応)-->
+    <link href="icon.png" rel="apple-touch-icon" />
+
+    <!---iPhone用フルスクリーン表示--->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script>
+      setTimeout(function () {
+        window.scrollBy(0, 1);
+        //画面を、横向は0、縦方向は1行すくろーるさせる
+      }, 100); //100はミリ秒＝0.1秒のこと。
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carter+One&family=Pangolin&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+      .wrapper{
+      	font-family: 'Carter One', cursive;
+      	color: #A9A099;
+      	width: 100%;
+      	box-sizing: border-box;
+      	width: 390px;
+      	vertical-align: middle;
+      	text-align: center;
+      	font-size: 26px;
+      	position: absolute;
+      	top: 123px;
+      	left: 10px;
+      }
+      #myDate {
+      	margin-top: 250px;
+      }
+      #clocks {
+
+      	margin-left: auto;
+      	margin-right: auto;
+      }
+
+      .clock {
+      	position: absolute; /*画像を同じ位置に重ねる*/
+      	top: 0;
+      	left: -7px;
+      	justify-items: right;
+             align-items: right;
+      }
+      .circle {
+           width: 15px;
+           height: 15px;
+           background: white;
+           border: 1px solid rgba(205,187,181,1.00);
+           position: absolute;
+           top: 115px;
+           left: 110px;
+           border-radius: 50%;
+         }
+
+      }
+      #clocks2 {
+
+      	margin-left: auto;
+      	margin-right: auto;
+      }
+      .clock2 {
+      	position: absolute; /*画像を同じ位置に重ねる*/
+      	top: 568px;
+      	left: 147px;
+      	justify-items: center;
+             align-items: center;
+      }
+      .circle2 {
+           width: 15px;
+           height: 15px;
+           background: white;
+           border: 1px solid rgba(205,187,181,1.00);
+           position: absolute;
+           top: 683px;
+           left: 264px;
+           border-radius: 50%;
+         }
+    </style>
+  </head>
+
+  <body>
+    <img src="img/body.png" alt="" />
+    <div id="clocks">
+      <img src="img/short.png" alt="" id="img_short" class="clock" />
+      <img src="img/long.png" alt="" id="img_long" class="clock" />
+      <img src="img/sec.png" alt="" id="img_sec" class="clock" />
+      <div class="circle"></div>
+    </div>
+    <div class="wrapper">
+      <p id="myDate"></p>
+    </div>
+    <div id="clocks2">
+      <img src="img/short.png" alt="" id="img_short2" class="clock2" />
+      <img src="img/long.png" alt="" id="img_long2" class="clock2" />
+      <img src="img/sec.png" alt="" id="img_sec2" class="clock2" />
+      <div class="circle2"></div>
+    </div>
+    <script>
+      //時計の取得と針の角度の計算
+      function moveClock() {
+        //変数を作る宣言を集めて書いておく
+        var myDate,
+          myYear,
+          myMonth,
+          myDay,
+          myHour,
+          myMin,
+          mySec,
+          hDeg,
+          mDeg,
+          sDeg;
+
+        //デバイスの内部時計から今の時間を取得して変数[myDate]に覚える
+        myDate = new Date();
+
+        const utc = myDate.getTime() + myDate.getTimezoneOffset() * 60000;
+
+        const japaneseDate = new Date(utc + 3600000 * 9);
+        const vietnameseDate = new Date(utc + 3600000 * 7);
+
+        jpHour = japaneseDate.getHours();
+        jpMin = japaneseDate.getMinutes();
+        jpSec = japaneseDate.getSeconds();
+
+        vnHour = vietnameseDate.getHours();
+        vnMin = vietnameseDate.getMinutes();
+        vnSec = vietnameseDate.getSeconds();
+
+        //変数[myDate]から時分秒を抜き出しそれぞれ別の変数に覚える
+
+        // myHour = myDate.getHours(); //時間だけ抜き出して変数に覚える
+        // myMin = myDate.getMinutes();
+        // mySec = myDate.getSeconds();
+
+        myYear = myDate.getFullYear();
+        myMonth = myDate.getMonth() + 1;
+        myDay = myDate.getDate();
+
+        //時計の角度を計算してそれぞれ別の変数に覚える
+        // hDeg = (myHour % 12) * (360 / 12); //短針（時）の角度の計算。「％」は割算の余りを出す
+        // mDeg = myMin * (360 / 60); //長針（分）の角度の計算
+        // sDeg = mySec * (360 / 60); //秒針の角度の計算
+
+        jpHourDeg = (jpHour % 12) * (360 / 12);
+        jpMinDeg = jpMin * (360 / 60);
+        jpSecDeg = jpSec * (360 / 60);
+
+        vnHourDeg = (vnHour % 12) * (360 / 12);
+        vnMinDeg = vnMin * (360 / 60);
+        vnSecDeg = vnSec * (360 / 60);
+
+        //短針を1分ごと、長針を一秒ごとに回転させる調整をする
+        // hDeg += (myMin / 60) * (360 / 12); //今の角度に一分ごとの角度を足して同じ変数に覚えなおす
+        // mDeg += (mySec / 60) * (360 / 12); //今の角度に一秒ごとの角度を足して同じ変数に覚えなおす
+
+        jpHourDeg += (jpMin / 60) * (360 / 12);
+        jpMinDeg += (jpSec / 60) * (360 / 12);
+
+        vnHourDeg += (vnMin / 60) * (360 / 12);
+        vnMinDeg += (vnSec / 60) * (360 / 12);
+
+        //短針の回転をさせる
+        document.getElementById("img_short").style.transform =
+          "rotate(" + jpHourDeg + "deg)";
+        document.getElementById("img_short2").style.transform =
+          "rotate(" + vnHourDeg + "deg)";
+        //長針の回転をさせる
+        document.getElementById("img_long").style.transform =
+          "rotate(" + jpMinDeg + "deg)";
+        document.getElementById("img_long2").style.transform =
+          "rotate(" + vnMinDeg + "deg)";
+
+        //秒針の回転をさせる
+        document.getElementById("img_sec").style.transform =
+          "rotate(" + jpSecDeg + "deg)";
+        document.getElementById("img_sec2").style.transform =
+          "rotate(" + vnSecDeg + "deg)";
+
+        document.getElementById("myDate").innerHTML =
+          myYear + "." + myMonth + "." + myDay;
+      }
+      //1秒ごとに時間を動かす変数を呼ぶ
+      window.onload = function () {
+        //このドキュメントが開いて時点で発動させる
+        setInterval("moveClock()", 1000);
+        //1000はミリ秒＝1秒のこと
+      };
+    </script>
+  </body>
+</html>

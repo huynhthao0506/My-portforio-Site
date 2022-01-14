@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ToDo メモ</title>
+<!--iPhone用フルスクリーン表示-->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+<main id="todolist">
+  <h1>
+    ToDo メモ
+    <span>今日も一日頑張ろう</span>
+  </h1>
+
+  <template v-if="todo.length">
+    <transition-group name="todolist" tag="ul">
+      <li v-for="item in todoByStatus" v-bind:class="item.done ? 'done' : ''" v-bind:key="item.id">
+        <span class="label">{{item.label}}</span>
+        <div class="actions">
+          <button class="btn-picto" type="button" v-on:click="markAsDoneOrUndone(item)" v-bind:aria-label="item.done ? 'Undone' : 'Done'" v-bind:title="item.done ? '未成' : '完了'">
+            <i aria-hidden="true" class="material-icons">{{ item.done ? 'check_box' : 'check_box_outline_blank' }}</i>
+          </button>
+          <button class="btn-picto" type="button" v-on:click="deleteItemFromList(item)" aria-label="Delete" title="削除">
+            <i aria-hidden="true" class="material-icons">delete</i>
+          </button>
+        </div>
+      </li>
+    </transition-group>
+    <togglebutton 
+                  label="完了タスクを下に移動する。"
+                  name="todosort"
+                  v-on:clicked="clickontoogle" />
+  </template>
+  <p v-else class="emptylist">今日の予定がありません。^.^</p>
+
+  <form name="newform" v-on:submit.prevent="addItem">
+    <label for="newitem">タスクを登録しましょう。</label>
+    <input type="text" name="newitem" id="newitem" v-model="newitem">
+    <button type="submit">登録</button>
+  </form>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+<script type="text/javascript" src="todo.js"></script>
+
+
+</body>
+</html>

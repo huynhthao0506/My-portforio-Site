@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+table{
+	border-collapse: collapse;/*セルとセルの間を空けない*/
+}
+.keisan{
+	background-image: url("images/btn2-1.png");
+}
+input[type="text"]{
+	text-align: right;
+	font-size: 24px;
+	background-color: rgba(255,255,255,0.3);
+	padding: 5px;
+	margin-left: 15px;
+	width: 242px;
+	border-top: 1px solid rgba (0,0,0,0.35);
+	border-left: 1px solid rgba (0,0,0,0.35);
+	border-bottom: 1px solid rgba (255,255,255,0.35);
+	border-right: 1px solid rgba (255,255,255,0.35);
+}
+
+
+img{
+	vertical-align: bottom;
+}
+
+
+
+
+
+
+

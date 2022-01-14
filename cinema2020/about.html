@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>オンラインシネマについて</title>
+
+  <!-- load CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400"> 
+　<link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">	<!-- Google web font  -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">                                            <!-- https://getbootstrap.com/ -->
+  <link rel="stylesheet" href="css/fontawesome-all.min.css">                                      <!-- Font awesome -->
+  <link rel="stylesheet" href="css/tooplate-style.css">                                           
+
+  <script>
+    var renderPage = true;
+
+    if (navigator.userAgent.indexOf('MSIE') !== -1
+      || navigator.appVersion.indexOf('Trident/') > 0) {
+      /* Microsoft Internet Explorer detected in. */
+      alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
+      renderPage = false;
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <!-- Loader -->
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+  <div class="tm-main">
+
+    <div class="tm-welcome-section">
+      <div class="container tm-navbar-container">
+        <div class="row">
+          <div class="col-xl-12">
+            <nav class="navbar navbar-expand-sm">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a href="index.html" class="nav-link tm-nav-link tm-text-blue-dark">ホーム</a>
+                </li>
+                <li class="nav-item active">
+                  <a href="about.html" class="nav-link tm-nav-link table-active active">オンラインシネマ</a>
+                </li>
+                <li class="nav-item">
+                  <a href="contact.html" class="nav-link tm-nav-link tm-text-blue-dark">連絡</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="container text-center tm-welcome-container">
+        <div class="tm-welcome">
+          <i class="fas tm-fa-big fa-film tm-fa-mb-big"></i>
+          <h1 class="text-uppercase mb-3 tm-site-name">オンラインシネマ</h1>
+          <p class="tm-site-description">どこでも映画館になる。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <div class="tm-search-form-container">
+        <form action="index.html" method="GET" class="form-inline tm-search-form">
+          <div class="text-uppercase tm-new-release">SEARCH</div>
+          <div class="form-group tm-search-box">
+            <input type="text" name="keyword" class="form-control tm-search-input" placeholder="好きなワードを入力してください。">
+            <input type="submit" value="検索" class="form-control tm-search-submit">
+          </div>
+          <div class="form-group tm-advanced-box">
+            <a href="#" class="tm-text-white">ジャンル</a>
+          </div>
+        </form>
+      </div>
+
+      <div class="row tm-about-row tm-mt-big tm-mb-medium">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 tm-about-col-left">
+          <div class="tm-v-center tm-bg-gray h-100 tm-about-text">
+            <h2 class="tm-text-brown mb-4 tm-about-h2">オンラインシネマとは</h2>
+            <p class="tm-about-description mb-0">オンライシネマはドラマ、映画、アニメを配信するサービスです。メンバーはあらゆるインターネット接続デバイスで視聴することができます。<br>いつでもどこでも、好きなだけ視聴することができ、広告は一切ありません。</p>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+          <div class="tm-about-img"></div>
+        </div>
+      </div>
+
+      <div class="row tm-about-row tm-mb-medium">
+        <div class="tm-tab-links-container">
+
+          <ul class="nav nav-tabs" id="tmTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link tm-bg-gray tm-media-v-center tm-tab-link active" id="home-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="home" aria-selected="true">
+                <i class="fas fa-2x fa-film pr-4"></i>
+                <p class="media-body mb-0 tm-media-link">何か視聴できますか？</p>
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link tm-bg-gray tm-media-v-center tm-tab-link" id="contact-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="contact" aria-selected="false">
+                <i class="fab fa-2x fa-amazon-pay pr-4"></i>
+                <p class="media-body mb-0 tm-media-link">お支払い</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link tm-bg-gray tm-media-v-center tm-tab-link" id="contact-tab" data-toggle="tab" href="#tab4" role="tab" aria-controls="contact" aria-selected="false">
+                <i class="fas fa-2x fa-headphones pr-4"></i>
+                <p class="media-body mb-0 tm-media-link">対応デバイス</p>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="tm-tab-content-container">
+          <div class="tab-content h-100 tm-bg-gray" id="myTabContent">
+            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+              <div class="media tm-media-2">
+                <i class="fas fa-5x fa-film mb-3 tm-text-pink-dark tm-media-2-icon"></i>
+                <div class="media-body tm-media-body-2">
+                  <h2 class="mb-4 tm-text-pink-dark tm-media-2-header">何か視聴できますか？</h2>
+                  <p class="mb-4">オンラインシネマでは、長編映画、ドキュメンタリー、ドラマ、アニメ、豊富なラインナップをご用意しています。いつでもお好きなだけ視聴できます。映画やドラマは毎週追加されるので、いつでも新しい作品を発見できます。</p>
+                  <p class="mb-4">お気に入りの作品をダウンロードすれば、いつでも楽しみいただけます。</p>
+                  <a href="#" class="btn btn-secondary">もっと見る</a>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+              <div class="media tm-media-2">
+                <i class="fab fa-5x fa-amazon-pay mb-3 tm-text-pink-dark tm-media-2-icon"></i>
+                <div class="media-body tm-media-body-2">
+                  <h2 class="mb-4 tm-text-pink-dark tm-media-2-header">お支払い方法</h2>
+                   <p class="mb-4"><ul>
+					  <li>コンビニ・ATM・ネットバンキング・電子マネー払い</li>
+					  <li>代金引換</li>
+					  <li>クレジットカード</li> 
+				　　</ul></p> 
+                  <a href="#" class="btn btn-secondary">もっと見る</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+              <div class="media tm-media-2">
+                <i class="fas fa-5x fa-headphones mb-3 tm-text-pink-dark tm-media-2-icon"></i>
+                <div class="media-body tm-media-body-2">
+                  <h2 class="mb-4 tm-text-pink-dark tm-media-2-header">対応デバイス</h2>
+                  <p class="mb-4">スマートフォンやタブレット、パソコンやテレビなど、たくさんの機器でたくさんの映画をお楽しみください。</p>
+                  <p class="mb-4">スマートテレビやApple TVはもちろん、PlaystationやXboxなどのゲーム機、Chromecastなどのストリーミングデバイス、ブルーレイプレーヤーを使えば、お持ちのテレビで簡単に観られます。</p>
+                  <a href="#" class="btn btn-secondary">もっと見る</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row tm-about-row tm-mb-medium">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          <div class="embed-responsive embed-responsive-21by9">
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/mzIsfSsZh7I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      
+       <div class="row tm-mb-medium">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 mb-4">
+          <h4 class="mb-4 tm-font-300">人気映画</h4>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">泣きたい私は猫をかぶる</a>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">記憶にございません!</a>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">性の劇薬</a>
+          <a href="#" class="tm-text-blue-dark d-block">アイネクライネ ナハトムジーク</a>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 mb-4">
+          <h4 class="mb-4 tm-font-300">よくある質問</h4>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">オンラインシネマとは？</a>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">アカウントを作るには</a>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">お支払い方法</a>
+          <a href="#" class="tm-text-blue-dark d-block">対応デバイス</a>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+          <h4 class="mb-4 tm-font-300">ヘルプセンター</h4>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">利用規約</a>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">法的事項</a>
+          <a href="#" class="tm-text-blue-dark d-block mb-2">お問い合わせ</a>
+          <a href="#" class="tm-text-blue-dark d-block">プライバシー</a>
+        </div>
+      </div>
+       <footer class="row">
+        <div class="col-xl-12">
+          <p class="text-center p-4">Copyright &copy; <span class="tm-current-year">2020</span> オンラインシネマ</p>
+        </div>
+      </footer>
+    </div> <!-- .container -->
+
+  </div> <!-- .main -->
+  <!-- load JS -->
+  <script src="js/jquery-3.2.1.slim.min.js"></script> <!-- https://jquery.com/ -->
+  <script src="js/bootstrap.min.js"></script>         <!-- https://getbootstrap.com/ -->
+  <script>
+
+    /* DOM is ready
+    ------------------------------------------------*/
+    $(function () {
+
+      if (renderPage) {
+        $('body').addClass('loaded');
+      }
+
+      $('.tm-current-year').text(new Date().getFullYear());  // Update year in copyright
+    });
+
+  </script>
+</body>
+</html>

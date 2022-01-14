@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>練習</title>
+<!---アイコンの設定　（Android対応)-->
+<link href="icon.png" rel="apple-touch-icon">
+
+<!---iPhone用フルスクリーン表示--->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script>
+	setTimeout(function(){
+		window.scrollBy(0,1);
+		//画面を、横向は0、縦方向は1行すくろーるさせる
+	},100);//100はミリ秒＝0.1秒のこと。
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	html,body,.wrapper{
+		width: 100%;
+		
+		box-sizing: border-box;
+	}
+	body {
+		font-family: 'Press Start 2P', cursive;
+		
+		background-image: url("mario3.jpg");
+		background-repeat: no-repeat;
+	}
+	.wrapper {
+		width: 390px;
+		
+		vertical-align: middle;
+		text-align: center;
+		font-size: 25px;
+	}
+	#myDate {
+		margin-top: 250px;
+	}
+	#myTime{
+		margin-top: 200px;
+	}
+</style>
+</head>
+
+<body>
+	<div class="wrapper">
+	   <p id="myDate"></p><!----カレンダーを表示する--->
+	   <p id="myTime"></p><!----時間を表示する--->
+	</div>
+<script>
+	var watch = function(){//関数式
+		var nowDate = new Date();//デバイスの内部時計から年月日時分秒を取得し変数「nowDate」に覚えさせる。
+		var nowYear = nowDate.getFullYear();//変数「nowDate」から年だけを抜き出し変数「nowYear」に覚えさせる。
+		var nowMonth = nowDate.getMonth()+1;//変数「nowDate」から月だけを抜き出し変数「nowMonth」に覚えさせる。ただし、0から数え始めので1を足し算しておく
+		var nowDay = nowDate.getDate();//変数「nowDate」から日だけを抜き出し変数「nowDay」に覚えさせる。
+		var nowHour = nowDate.getHours();//変数「nowDate」から時だけを抜き出し変数「nowHour」に覚えさせる。
+		var nowMin = nowDate.getMinutes();//変数「nowDate」から分だけを抜き出し変数「nowMin」に覚えさせる。
+		var nowSec = nowDate.getSeconds();//変数「nowDate」から秒だけを抜き出し変数「nowSec」に覚えさせる。
+		
+		if(nowHour < 10){//もしも変数「nowHour」の値が10よりちいさかったら
+			nowHour = '0' + nowHour;//頭に0をつけて覚えなおす。
+		}
+		if(nowMin < 10){//もしも変数「nowMin」の値が10よりちいさかったら
+			nowMin = '0' + nowMin;//頭に0をつけて覚えなおす。
+		}
+		if(nowSec < 10){//もしも変数「nowSec」の値が10よりちいさかったら
+			nowSec = '0' + nowSec;//頭に0をつけて覚えなおす。
+		}
+		document.getElementById('myDate').innerHTML=nowYear + '.' + nowMonth + '.' + nowDay;
+		document.getElementById('myTime').innerHTML=nowHour + '.' + nowMin + '.' + nowSec;
+		
+	}
+	setInterval(watch,1000);
+		//1000ミリ秒＝1秒ごとに関数式「watch」を実行するように設定する。
+</script>
+</body>
+</html>
